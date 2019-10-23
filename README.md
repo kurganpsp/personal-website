@@ -161,22 +161,22 @@ Para **agregar una página** a su sitio web (por ejemplo, currículum detallado)
 
 ```
 ---
-diseño: predeterminado
+layout: default
 ---
 ```
 
-## Adding blog posts
+## Agregar publicaciones de blog
 
-To **add a blog post** to your website:
+Para **agregar una publicación de blog** a su sitio web:
 
-1. Create a new `.md` file in your repository's `/_posts/` directory.
-2. Give it a filename using the following format:
+1. Cree un nuevo archivo `.md` en el directorio `/_posts/` de su repositorio.
+2. Déle un nombre de archivo con el siguiente formato:
 
 ```
 YEAR-MONTH-DAY-title.MARKUP
 ```
 
-3. At the start of your file, include the following [front matter](https://jekyllrb.com/docs/front-matter/):
+3. Al comienzo de su archivo, incluya lo siguiente [front matter](https://jekyllrb.com/docs/front-matter/):
 
 ```
 ---
@@ -184,49 +184,49 @@ title: "The title of my blog post"
 ---
 ```
 
-Your website comes with a placeholder blog post that you can reference. Notably, its [front matter](https://jekyllrb.com/docs/front-matter/) declares `published` as `false`, so that it won't appear on your website.
+Su sitio web viene con una publicación de blog de marcador de posición a la que puede hacer referencia. En particular, su [front matter](https://jekyllrb.com/docs/front-matter/) declara `published` como `false`, para que no aparezca en su sitio web.
 
-While you can define a `layout` in the front matter, your website is pre-configured to assign the `post` layout to all of the posts in your `/_posts/` directory. So you don't have to declare that in your posts.
+Si bien puede definir un `layout` en la front matter, su sitio web está preconfigurado para asignar el diseño `post` a todas las publicaciones en su directorio `/_posts/`. Así que no tienes que declarar eso en tus publicaciones.
 
-Jekyll's conventions for authoring and managing blog posts is very flexible. You can [learn more in Jekyll's documentation for "Posts."](https://jekyllrb.com/docs/posts/)
+Las convenciones de Jekyll para la creación y gestión de publicaciones de blog son muy flexibles. Puede [obtener más información en la documentación de Jekyll para "Post"](https://jekyllrb.com/docs/posts/)
 
-## Content and templates
+## Contenido y plantillas
 
-To give you a sound foundation to start your personal website, your repository includes a handful of "includes" -- dynamic `.html` files that are re-used throughout your website. They're all stored in the `/_includes/` directory.
+Para darle una base sólida para comenzar su sitio web personal, su repositorio incluye un puñado de "includes": archivos dinámicos `.html` que se reutilizan en su sitio web. Todos están almacenados en el directorio `/_includes/`.
 
-There are the usual suspects, like `header.html` and `footer.html`. But there are few more worth pointing out:
+Existen los sospechosos habituales, como `header.html` y `footer.html`. Pero hay algunos más que vale la pena señalar:
 
-- `interests.html`: A heading and dynamic list of "My Interests," which is populated with the [topics](#topics) you list in your `_config.yml`.
-- `masthead.html`: A collection of your avatar, name, bio, and other metadata that's displayed prominently on all your webpages to help identify what the website is about.
-- `post-card.html`: A compact, summarized presentation of a blog post, re-used to display a listing of your latest blog posts.
-- `projects.html`: A heading and dynamic list of "My Projects," which is populated with a listing of your newest GitHub repositories.
-- `repo-card.html`: A compact, summarized presentation of a repository, re-used to display a listing of your GitHub repositories.
-- `thoughts.html`: A heading and dynamic list of "My Thoughts," which is populated with a listing of your latest blog posts.
-- `topic-card.html`: A compact, summarized presentation of a topic (defined in your `_config.yml`), re-used to display a listing of your interests.
+- `interests.html`: un encabezado y una lista dinámica de "Mis intereses", que se completa con los [topics](#topics) que usted enumera en su `_config.yml`.
+- `masthead.html`: una colección de su avatar, nombre, biografía y otros metadatos que se muestran de manera destacada en todas sus páginas web para ayudar a identificar de qué se trata el sitio web.
+- `post-card.html`: una presentación resumida y compacta de una publicación de blog, reutilizada para mostrar una lista de sus últimas publicaciones de blog.
+- `projects.html`: un encabezado y una lista dinámica de "Mis proyectos", que se completa con una lista de sus repositorios más nuevos de GitHub.
+- `repo-card.html`: una presentación resumida y compacta de un repositorio, reutilizada para mostrar una lista de sus repositorios de GitHub.
+- `thoughts.html`: un encabezado y una lista dinámica de "Mis pensamientos", que se completa con una lista de sus últimas publicaciones de blog.
+- `topic-card.html`: una presentación resumida y compacta de un tema (definido en su `_config.yml`), reutilizado para mostrar una lista de sus intereses.
 
-### Layouts
+### Diseños
 
-Your repository comes with three layouts:
+Su repositorio viene con tres diseños:
 
-- **default**: Not used by any of the built-in pages or posts, but useful for any new pages you create.
-- **home**: Used by your `index.html` homepage to display listings of your projects, interests, and (optionally) your blog posts.
-- **post**: Used by default by the posts in your `/_posts/` directory.
+- **default**: no es utilizado por ninguna de las páginas o publicaciones integradas, pero es útil para cualquier página nueva que cree.
+- **home**: Utilizado por su página de inicio `index.html` para mostrar listados de sus proyectos, intereses y (opcionalmente) sus publicaciones de blog.
+- **post**: Usado por defecto por las publicaciones en su directorio `/_posts/`.
 
-Jekyll's convention for defining layouts is very flexible. You can [learn more about customizing your layouts in the Jekyll "Layouts" docs.](https://jekyllrb.com/docs/layouts/)
+La convención de Jekyll para definir diseños es muy flexible. Puede [obtener más información sobre la personalización de sus diseños en los documentos de "Diseños" de Jekyll.](Https://jekyllrb.com/docs/layouts/)
 
-## Styles
+## Estilos
 
-Your website is pre-configured to use [GitHub's very flexible CSS framework called "Primer,"](https://styleguide.github.com/primer/). It's currently referenced within your `styles.scss` file, using the CSS import at-rule:
+Su sitio web está preconfigurado para usar [el muy flexible marco de trabajo CSS de GitHub llamado "Primer",](https://styleguide.github.com/primer/). Actualmente está referenciado dentro de su archivo `styles.scss`, usando la regla de importación CSS:
 
 ```
 @import url('https://unpkg.com/primer/build/build.css');
 ```
 
-You are, of course, welcome to remove it or replace it with another framework. Just bear in mind that the HTML that your website came pre-packaged with references multiple Primer "utility classes" to define things like column widths, margins, and background colors.
+Por supuesto, puede eliminarlo o reemplazarlo con otro marco de trabajo. Solo tenga en cuenta que el HTML que su sitio web viene preempacado con referencias a varias "utility classes" de Primer para definir cosas como anchos de columna, márgenes y colores de fondo.
 
-You also have the option to add on to and extend Primer's styles by adding custom CSS to your `/assets/styles.scss` Sass stylesheet. By editing this file, you can customize your website's color scheme, typography, and more.
+También tiene la opción de agregar y ampliar los estilos de Primer agregando CSS personalizado a su hoja de estilo Sass `/assets/styles.scss`. Al editar este archivo, puede personalizar la combinación de colores, la tipografía y más de su sitio web.
 
 
-## License
+## Licencia
 
-The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+El tema está disponible como código abierto bajo los términos de la [Licencia MIT](https://opensource.org/licenses/MIT).
