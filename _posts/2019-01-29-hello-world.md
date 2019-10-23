@@ -3,9 +3,9 @@ title: "Welcome to Jekyll!"
 published: false
 ---
 
-**Hello world**, this is my first Jekyll blog post.
+**Hello world**, este es mi primer post en Jekyll.
 
-I hope you like it!
+Espero que les guste!
 
 # Highlighter
 ## Ruby
