@@ -26,7 +26,7 @@ Una vez que haya encontrado un hogar para su repositorio bifurcado, **[clónelo]
 
 Jekyll es una [Ruby Gem](https://jekyllrb.com/docs/ruby-101/#gems) que se puede instalar en la mayoría de los sistemas.
 
-1. Instalar un completo [Ruby development environment](https://jekyllrb.com/docs/installation/)
+1. [Instale un entorno de desarrollo completo de Ruby](https://jekyllrb.com/docs/installation/)
 2. Instalar Jekyll y [bundler](https://jekyllrb.com/docs/ruby-101/#bundler) [gems](https://jekyllrb.com/docs/ruby-101/#gems)
 ```
 gem install jekyll bundler
