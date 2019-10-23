@@ -1,12 +1,12 @@
-# Get started building your personal website
+# Comience a construir su sitio web personal
 
-### Showcase your software development skills
+### Muestra tus habilidades de desarrollo de software
 
-This repository gives you the code you'll need to kickstart a personal website that showcases your work as a software developer. And when you manage the code in a GitHub repository, it will automatically render a webpage with the owner's profile information, including a photo, bio, and repositories.
+Este repositorio le brinda el código que necesitará para iniciar un sitio web personal que muestre su trabajo como desarrollador de software. Y cuando administra el código en un repositorio de GitHub, automáticamente mostrará una página web con la información del perfil del propietario, incluyendo una foto, biografía y repositorios.
 
-Your personal website is waiting to be personalized, though. It includes space to highlight your specific areas of interest in software development, like languages or industries. And it's standing by to publish your next great blog post.
+Sin embargo, su sitio web personal está esperando ser personalizado. Incluye espacio para resaltar sus áreas específicas de interés en el desarrollo de software, como idiomas o industrias. Y está listo para publicar su próxima gran publicación de blog.
 
-It's all possible using the combination of [Jekyll](https://jekyllrb.com/docs/) (for building your website), [GitHub Pages](https://pages.github.com/) (for hosting your website), and [GitHub's API](https://developer.github.com/v3/) (for automatically populating your website with content).
+Todo es posible utilizando la combinación de [Jekyll](https://jekyllrb.com/docs/) (para construir su sitio web), [GitHub Pages](https://pages.github.com/) (para alojar su sitio web ) y [API de GitHub](https://developer.github.com/v3/) (para rellenar automáticamente su sitio web con contenido).
 
 ## Installation
 
