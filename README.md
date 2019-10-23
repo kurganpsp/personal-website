@@ -8,23 +8,23 @@ Sin embargo, su sitio web personal está esperando ser personalizado. Incluye es
 
 Todo es posible utilizando la combinación de [Jekyll](https://jekyllrb.com/docs/) (para construir su sitio web), [GitHub Pages](https://pages.github.com/) (para alojar su sitio web ) y [API de GitHub](https://developer.github.com/v3/) (para rellenar automáticamente su sitio web con contenido).
 
-## Installation
+## Instalación
 
-### Fork the `github/personal-website` repo
+### Bifurca el repositorio `github/personal-website`
 
-You'll be making your own copy of the "personal website starter" repository so you have your own project to customize. A "fork" is a copy of a repository. So select "Fork" atop [the `github/personal-website` repository](https://github.com/github/personal-website).
+Hará su propia copia del repositorio "iniciador de sitio web personal" para que pueda personalizar su propio proyecto. Una "bifurcación" es una copia de un repositorio. Por lo tanto, seleccione "Fork" en la parte superior [el repositorio `github/personal-website`](https://github.com/github/personal-website).
 
-Once you've found a home for your forked repository, it's yours. You're the owner, so you're ready to publish, if you wish.
+Una vez que haya encontrado un hogar para su repositorio bifurcado, será suyo. Eres el propietario, así que estás listo para publicar, si lo deseas.
 
-### Install in your local development environment
+### Instalar en su entorno de desarrollo local
 
-If you want to manage your website in a local web development environment, you'll be using [Ruby](https://jekyllrb.com/docs/installation/).
+Si desea administrar su sitio web en un entorno de desarrollo web local, utilizará [Ruby](https://jekyllrb.com/docs/installation/).
 
-Once you've found a home for your forked repository, **[clone it](https://help.github.com/articles/cloning-a-repository/)**.
+Una vez que haya encontrado un hogar para su repositorio bifurcado, **[clónelo](https://help.github.com/articles/cloning-a-repository/)**.
 
-#### Install Jekyll
+#### Instalar Jekyll
 
-Jekyll is a [Ruby Gem](https://jekyllrb.com/docs/ruby-101/#gems) that can be installed on most systems.
+Jekyll es una [Ruby Gem](https://jekyllrb.com/docs/ruby-101/#gems) que se puede instalar en la mayoría de los sistemas.
 
 1. Install a full [Ruby development environment](https://jekyllrb.com/docs/installation/)
 2. Install Jekyll and [bundler](https://jekyllrb.com/docs/ruby-101/#bundler) [gems](https://jekyllrb.com/docs/ruby-101/#gems)
