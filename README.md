@@ -26,25 +26,25 @@ Una vez que haya encontrado un hogar para su repositorio bifurcado, **[clónelo]
 
 Jekyll es una [Ruby Gem](https://jekyllrb.com/docs/ruby-101/#gems) que se puede instalar en la mayoría de los sistemas.
 
-1. Install a full [Ruby development environment](https://jekyllrb.com/docs/installation/)
-2. Install Jekyll and [bundler](https://jekyllrb.com/docs/ruby-101/#bundler) [gems](https://jekyllrb.com/docs/ruby-101/#gems)
+1. Instalar un completo [Ruby development environment](https://jekyllrb.com/docs/installation/)
+2. Instalar Jekyll y [bundler](https://jekyllrb.com/docs/ruby-101/#bundler) [gems](https://jekyllrb.com/docs/ruby-101/#gems)
 ```
 gem install jekyll bundler
 ```
-3. Change into your new directory
+3. Cambie a su nuevo directorio
 ```
 cd personal-website
 ```
-4. Install missing gems
+4. Instalar gemas faltantes
 ```
 bundle install
 ```
-5. Build the site and make it available on a local server
+5. Construya el sitio y póngalo disponible en un servidor local
 ```
 bundle exec jekyll serve
 ```
 
-You should see something like:
+Deberías ver algo como:
 
 ```
 Configuration file: /octocat/personal-website/_config.yml
@@ -59,43 +59,43 @@ Configuration file: /octocat/personal-website/_config.yml
   Server running... press ctrl-c to stop.
 ```
 
-Don't worry about the "No GitHub API authentication could be found" message. [API authentication is only necessary](https://github.com/jekyll/github-metadata/blob/master/docs/authentication.md) if you intend to display more detailed metadata, like a branch name.
+No se preocupe por el mensaje "No se pudo encontrar la autenticación de la API de GitHub". [La autenticación API solo es necesaria](https://github.com/jekyll/github-metadata/blob/master/docs/authentication.md) si tiene la intención de mostrar metadatos más detallados, como el nombre de una sucursal.
 
-6. Now browse to [http://localhost:4000](http://localhost:4000)
+6. Ahora navegue a [http://localhost:4000](http://localhost:4000)
 
-### Publish
+### Publicar
 
-When you host your personal website's code on GitHub, you get the support of free hosting through GitHub Pages.
+Cuando aloja el código de su sitio web personal en GitHub, obtiene el soporte de alojamiento gratuito a través de las páginas de GitHub.
 
-**The fastest approach** is to rename your repository `username.github.io`, where `username` is your GitHub username (or organization name). Then, the next time you push any changes to your repository's `master` branch, they'll be accessible on the web at your `username.github.io` address.
+**El enfoque más rápido** es cambiar el nombre de su repositorio `username.github.io`, donde` username` es su nombre de usuario de GitHub (o nombre de la organización). Luego, la próxima vez que envíe algún cambio a la rama `master` de su repositorio, estará accesible en la web en su dirección` username.github.io`.
 
-**If you want to use a custom domain**, you'll want to add it to your repository's "Custom domain" settings on github.com. And then register and/or [configure your domain with a DNS provider](https://help.github.com/articles/quick-start-setting-up-a-custom-domain/).
+**Si desea utilizar un dominio personalizado**, deberá agregarlo a la configuración de "Dominio personalizado" de su repositorio en github.com. Y luego regístrese y/o [configure su dominio con un proveedor de DNS](https://help.github.com/articles/quick-start-setting-up-a-custom-domain/).
 
-## Customization
+## Personalización
 
-It's your website, and you control the source code. So you can customize everything, if you like. But we've provided a handful of quick customizations for you to consider as you get your website off the ground.
+Es su sitio web y usted controla el código fuente. Para que pueda personalizar todo, si lo desea. Pero hemos proporcionado un puñado de personalizaciones rápidas para que usted considere a medida que despega su sitio web.
 
-### Quick configuration changes
+### Cambios rápidos de configuración
 
-Most customizations can be done in a matter of seconds, by revising your repository's `_config.yml` file. Just remember to restart your local server each time you save new changes so your Jekyll-powered website rebuilds correctly:
+La mayoría de las personalizaciones se pueden hacer en cuestión de segundos, revisando el archivo `_config.yml` de su repositorio. Solo recuerde reiniciar su servidor local cada vez que guarde nuevos cambios para que su sitio web con tecnología Jekyll se reconstruya correctamente:
 
-1. Shut down your server by entering the keyboard command <kbd>CTRL</kbd>+<kbd>c</kbd>
-2. Restart your server: `bundle exec jekyll serve`
+1. Apague su servidor ingresando el comando de teclado <kbd>CTRL</kbd> + <kbd>c</kbd>
+2. Reinicie su servidor: `bundle exec jekyll serve`
 
 
-#### Layout
+#### Diseño
 
-Your website will display in a two-column layout by default on larger-screen devices, with your photo, name, and basic information displayed in a left-aligned "sidebar." You can quickly switch to a "stacked" single-column layout by changing the line in your `_config.yml` file that reads `layout: sidebar` to `layout: stacked`.
+Su sitio web se mostrará en un diseño de dos columnas de forma predeterminada en dispositivos de pantalla más grande, con su foto, nombre e información básica en una "barra lateral" alineada a la izquierda. Puede cambiar rápidamente a un diseño de columna única "apilada" cambiando la línea en su archivo `_config.yml` que dice` layout: sidebar` a `layout: stacked`.
 
-#### Style
+#### Estilo
 
-Your website appears with a "light" white and gray background by default, with dark text. You can quickly switch to a "dark" background with white text by changing the line in your `_config.yml` file that reads `style: light` to `style: dark`.
+Su sitio web aparece con un fondo blanco y gris "claro" de forma predeterminada, con texto oscuro. Puede cambiar rápidamente a un fondo "oscuro" con texto blanco cambiando la línea en su archivo `_config.yml` que dice` style: light` a `style: dark`.
 
-#### Projects
+#### Proyectos
 
-The "My Projects" section of your website is generated by default with your nine most recently "pushed" repositories. It also excludes repositories that you forked, by default. But each of these parameters can be quickly customized in your repository's `_config.yml` file, under the `projects` dictionary line.
+La sección "Mis proyectos" de su sitio web se genera de forma predeterminada con sus nueve repositorios "empujados" más recientes. También excluye los repositorios que usted bifurcó, por defecto. Pero cada uno de estos parámetros se puede personalizar rápidamente en el archivo `_config.yml` de su repositorio, debajo de la línea del diccionario `projects`.
 
-Parameters include:
+Los parámetros incluyen:
 
 - `sort_by`: The method by which repositories are sorted. Options include `pushed` and `stars`.
 - `limit`: The maximum number of repositories that will be displayed in the "My Projects" section of your website. Out of the box, this number is set to `9`.
@@ -103,19 +103,25 @@ Parameters include:
    - `forks`: When `true`, repositories you've forked will be excluded from the listing.
    - `projects`: A list the repository names you want to exclude from the listing.
 
-#### Topics
+- `sort_by`: el método por el cual se ordenan los repositorios. Las opciones incluyen `pushed` y` stars`.
+- `limit`: el número máximo de repositorios que se mostrarán en la sección "Mis proyectos" de su sitio web. Fuera de la caja, este número se establece en `9`.
+- `excluir`:
+  - `forks`: cuando es` true`, los repositorios que haya bifurcado se excluirán de la lista.
+  - `projects`: una lista de los nombres de repositorio que desea excluir de la lista.
 
-Your website comes pre-configured with three topics (e.g. "Web design" and "Sass") that appear in a section titled "My Interests." These are also stored in your repository's `_config.yml` file, where you can define each topic's name and two other optional details:
+#### Temas
 
-- `web_url`: The web address you'd like to your topic to link to (e.g. `https://github.com/topics/sass`).
-- `image_url`: The web address of an (ideally square) image that you'd like to appear with your topic.
+Su sitio web viene preconfigurado con tres temas (por ejemplo, "Web design" y "Sass") que aparecen en una sección titulada "Mis intereses". Estos también se almacenan en el archivo `_config.yml` de su repositorio, donde puede definir el nombre de cada tema y otros dos detalles opcionales:
+
+- `web_url`: La dirección web a la que desea vincular su tema (e.g. `https://github.com/topics/sass`).
+- `image_url`: La dirección web de una imagen (idealmente cuadrada) que le gustaría que aparezca con su tema.
 
 #### Social media
 
-Your website supports linking and sharing to social media services you're using, including Behance, Dribbble, Facebook, LinkedIn, Medium, Stack Overflow, Twitter, and YouTube. To identify the services you use:
+Su sitio web admite la vinculación y el intercambio con los servicios de redes sociales que está utilizando, incluidos Behance, Dribbble, Facebook, LinkedIn, Medium, Stack Overflow, Twitter y YouTube. Para identificar los servicios que utiliza:
 
-1. Edit your repository's `_config.yml` file.
-2. Edit the `social_media` dictionary line, and represent the services you like in a simple `key: value` form:
+1. Edite el archivo `_config.yml` de su repositorio.
+2. Edite la línea del diccionario `social_media` y represente los servicios que desee en una forma simple `key: value`:
 
 ```
 social_media:
@@ -136,26 +142,26 @@ social_media:
   youtube: your_username
 ```
 
-Links to your profile for each of the services you define will appear in the `<header>` of your website, appended to your bio. And if those services support sharing, any blog posts that you publish will include links to share that post using each social media service.
+Los enlaces a su perfil para cada uno de los servicios que defina aparecerán en el `<header>` de su sitio web, adjunto a su biografía. Y si esos servicios admiten compartir, cualquier publicación de blog que publique incluirá enlaces para compartir esa publicación utilizando cada servicio de redes sociales.
 
-**Note**: This feature is supported by two files in your repository:
+**Nota**: esta función es compatible con dos archivos en su repositorio:
 
-- `/_data/social_media.yml`: Defines each of the supported services, including variable name, display name, URL path, and SVG icon.
-- `/_includes/social_media_share_url.html`: Outputs the share URL required for any of the supported social media services that support sharing URLs.
+- `/_data/social_media.yml`: Define cada uno de los servicios compatibles, incluidos el nombre de la variable, el nombre para mostrar, la ruta de la URL y el icono SVG.
+- `/_includes/social_media_share_url.html`: Emite la URL compartida requerida para cualquiera de los servicios de redes sociales compatibles que admiten URL compartidas.
 
-If you're interested in adding a social media service that's not already supported in this repo, you can edit these two files to build that support.
+Si está interesado en agregar un servicio de redes sociales que aún no es compatible con este repositorio, puede editar estos dos archivos para crear ese soporte.
 
-## Adding pages
+## Agregar páginas
 
-To **add a page** to your website (e.g. detailed resume):
+Para **agregar una página** a su sitio web (por ejemplo, currículum detallado):
 
-1. Create a new `.html` or `.md` file at the root of your repository.
-2. Give it a filename that you want to be used in the page's URL (e.g. `http://yoursite.dev/filename`).
-3. At the start of your file, include the following [front matter](https://jekyllrb.com/docs/front-matter/):
+1. Cree un nuevo archivo `.html` o` .md` en la raíz de su repositorio.
+2. Déle un nombre de archivo que desee que se use en la URL de la página (por ejemplo, `http://yoursite.dev/filename`).
+3. Al comienzo de su archivo, incluya lo siguiente [tema principal](https://jekyllrb.com/docs/front-matter/):
 
 ```
 ---
-layout: default
+diseño: predeterminado
 ---
 ```
 
