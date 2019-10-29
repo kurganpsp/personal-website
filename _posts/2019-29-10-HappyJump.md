@@ -1,6 +1,6 @@
 ---
-title: "Welcome to Jekyll!"
-published: true
+title: "Happy Jump From IQ"
+published: false
 ---
 
 **Hello world**, este es mi primer post en Jekyll.
