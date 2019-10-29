@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Happy Jump From IQ"
 published: true
 ---
