@@ -1,6 +1,6 @@
 ---
 title: "Happy Jump From IQ"
-published: false
+published: true
 ---
 
 **Hello world**, este es mi primer post en Jekyll.
