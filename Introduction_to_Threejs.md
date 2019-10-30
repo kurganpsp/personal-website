@@ -6,7 +6,7 @@ layout: default
 
 How to bring three dimensions to your next web app
 
-1_yyd14XiZBbvCbkN3v4ipbQ.png
+![](1_yyd14XiZBbvCbkN3v4ipbQ.png)
 
 Photo by Kari Shea on Unsplash, featuring a Three.js render.
 
