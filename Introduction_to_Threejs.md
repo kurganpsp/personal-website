@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # JavaScript in 3D: an Introduction to Three.js
 
 How to bring three dimensions to your next web app
