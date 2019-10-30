@@ -14,11 +14,11 @@ Three.js is a powerful tool. It helps bring 3D design and animation to the brows
 I had some basic experience playing with the Unity Game Engine and C#, but otherwise many of the concepts were new to me. I realised there weren’t many beginner-friendly resources out there, and so I decided to write this article. In it, we’ll look at the main elements of a Three.js scene, from meshes and material to geometries, loaders and more.
 By the end of the article, you should have a solid understanding of the basic building blocks necessary to add an extra dimension to your next web project.
 
-1_7P2rZnsMdUR9HBP9bmFptA.png
+![](./_data/1_7P2rZnsMdUR9HBP9bmFptA.png)
 
-1_Am4hORAtVGahN-1Ipo13TQ.png
+![](./_data/1_Am4hORAtVGahN-1Ipo13TQ.png)
 
-1_gvX17esnMr8NiT5AtMyT3Q.png
+![](./_data/1_gvX17esnMr8NiT5AtMyT3Q.png)
 
 Three.js examples by Ben Houston, Thomas Diewald and StrykerDoesAnimation.
 
@@ -28,11 +28,13 @@ Often, the two most important classes in Three.js are Vector3 and Box3 . If you�
 # Vector3
 The most basic 3D class, containing three numbers x , y and z . This can be used to represent a point in 3D space or a direction and length. For example:
 
+```js
     const vect = new THREE.Vector3(1, 1, 1);
+```
 
-1_mDGah9z-0f-ph-_suSIQBA.png
+![](./_data/1_mDGah9z-0f-ph-_suSIQBA.png)
 
-1_KCU6U3S2dtp6IRBMiUdDFQ.png
+![](./_data/1_KCU6U3S2dtp6IRBMiUdDFQ.png)
 
 Points are locations in space. Vectors are displacements in space.
 
@@ -43,16 +45,20 @@ This class represents a cuboid (3D box). Its main purpose is to get the bounding
 
 Here’s how to create a box using a Vector3:
 
+```js
     const vect = new THREE.Vector3(1, 1, 1);
     const box = new THREE.Box3(vect);
+```
 
 And here’s how to create a box based on an existing 3D object:
 
+```js
     const box = new THREE.Box3();
     box.setFromObject(object);
+```
 
-1_qDeJsUUMQxeAcnUh_DWCpQ.png
-1_ec9gvOCklyJtb9SH2-ZE7w.png
+![](./_data/1_qDeJsUUMQxeAcnUh_DWCpQ.png)
+![](./_data/1_ec9gvOCklyJtb9SH2-ZE7w.png)
 
 A sphere in 3D space. On the right, the sphere’s bounding box is shown.
 
@@ -73,27 +79,36 @@ Using functions like THREE.TorusKnotGeometry , we can create complex-looking sha
 
 The simplest 3D shape, a cuboid or box, can be defined with a width , height and depth :
 
+```js
     const geometry = new THREE.BoxGeometry( 20, 20, 20 );
+```
 
 https://codepen.io/BretCameron/pen/eYOxYZL    
 
 For a sphere, the minimum information we need to provide is the radius , widthSegments and heightSegments . The latter two variables tell us the number of triangles the model should use to represent the sphere: the higher the number, the smoother the appearance of the sphere:
 
+```js
     const geometry = new THREE.SphereGeometry( 20, 64, 64 );
+```
 
 https://codepen.io/BretCameron/pen/KKPJKgQ    
 
 If we want to make pointed or triangle shapes, one option is a cone. Its arguments are a mix of the arguments supplied to the previous two geometries. Below, we specify radius , height and radialSegments .
-    
+
+```js    
     const geometry = new THREE.ConeBufferGeometry( 5, 20, 32 );
+```
 
 https://codepen.io/BretCameron/pen/MWgLWJB
 
 These are just a few of the most common shapes. Three.js comes with lots of built-in geometries, which you should check out in the docs. For most of this tutorial, we’ll use a more interesting shape, built using the TorusKnotGeometry method.
 
 Why this shape looks the way that it does is beyond the scope of this tutorial, but I encourage you to play around with the values, as you can make some very interesting objects in just a single line of code!
+
+```js
     const geometry = 
         new THREE.TorusKnotGeometry(10, 1.3, 500, 6, 6, 20);
+```
 
 https://codepen.io/BretCameron/pen/gOYqORg        
 
@@ -102,7 +117,7 @@ Geometries define the shape of our 3D objects, but not their appearance. For tha
 
 Three.js comes with 10 mesh materials, each with its own advantages and customisable properties. We’ll look into a handful of the most useful ones.
 
-1_iwS52w70zL5SDGeJztSdlA.png
+![](./_data/1_iwS52w70zL5SDGeJztSdlA.png)
 Four of the most common material types in Three.js.
 
 # MeshNormalMaterial
@@ -110,7 +125,9 @@ Useful for: getting up and running quickly
 
 We’ll start with the MeshNormalMaterial , the multi-coloured material we’ve used in the examples so far. It maps the normal vectors to RGB colours: in other words, it uses colour to distinguish the position of the vector in 3D space.
 
+```js
     const material = new THREE.MeshNormalMaterial();
+```
 
 Note that, if you want to change the colours of MeshNormalMaterial you could simply use a CSS filter, and alter the hue: e.g. filter: hue-rotate(90deg) .
 
@@ -121,10 +138,12 @@ Useful for: wireframes
 
 If you want your object to have a uniform colour, you can use MeshBasicMaterial , as it is not affected by lights. I find this useful for wireframes. To use wireframe mode, simply pass { wireframe: true } as an argument.
 
+```js
     const material = new THREE.MeshBasicMaterial({ 
         wireframe: true, 
         color: 0xdaa520
     });
+```
 
 https://codepen.io/BretCameron/pen/ZEzwERw    
 
@@ -135,6 +154,7 @@ Useful for: high performance (but lower accuracy)
 
 This is the first material which is affected by lights, so to see what we’re doing we’ll need to add some light to our scene. In the code below, we’ll add to spotlights, with a hint of yellow to create a warmer effect:
 
+```js
     const scene = new THREE.Scene();
     const frontSpot = new THREE.SpotLight(0xeeeece);
     frontSpot.position.set(1000, 1000, 1000);
@@ -142,13 +162,16 @@ This is the first material which is affected by lights, so to see what we’re d
     const frontSpot2 = new THREE.SpotLight(0xddddce);
     frontSpot2.position.set(-500, -500, -500);
     scene.add(frontSpot2);
+```
 
 Now let’s add the material for our shape. As it looks a bit like a piece of jewellery, I thought I’d go for a gold-ish colour. The other property, emissive , is the colour the object emits from itself (without any light source). Often, it works best as a dark colour — such as a dark shade of grey, like below:
 
+```js
     const material = new THREE.MeshLambertMaterial({
         color: 0xdaa520,
         emissive: 0x111111,
     });
+```
 
 https://codepen.io/BretCameron/pen/OJLdJGz    
 
@@ -161,11 +184,13 @@ This material offers a compromise between performance and appearance, and theref
 
 We can now alter a new property, specular , which defines the brightness and colour of the surface’s reflectivity. While the emissive property is usually dark, the specular one often works best as a light colour. Below, we’re using a light grey:
 
+```js
     const material = new THREE.MeshPhongMaterial({
         color: 0xdaa520,
         emissive: 0x000000,
         specular: 0xbcbcbc,
     });
+```
 
 https://codepen.io/BretCameron/pen/YzKBwwQ    
 
@@ -181,6 +206,7 @@ The metalness property alters the way the object reflects so that it’s closer 
 
 roughness adds a further layer of customisation. You can think of it as the opposite of glossiness: a value of 0 is extremely glossy, while a value of 1 is extremely rough (meaning very little light is reflected).
 
+```js
     const material = new THREE.MeshStandardMaterial({
         color: 0xfcc742,
         emissive: 0x111111,
@@ -188,6 +214,7 @@ roughness adds a further layer of customisation. You can think of it as the oppo
         metalness: 1,
         roughness: 0.55,
     });
+```
 
 https://codepen.io/BretCameron/pen/gOYqPMv    
 
@@ -199,6 +226,7 @@ As we’ve discussed, it’s possible to manually define the geometry of your me
 
 The basic ObjectLoader loads a JSON resource, using the JSON Object/Scene format. But most loaders need to be imported manually. You can find a list of supported loaders in this GitHub directory, and import them like so, using the GitHub file path. Here are imports for several common formats:
 
+```js
     // GLTF
     import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
     // OBJ
@@ -209,11 +237,13 @@ The basic ObjectLoader loads a JSON resource, using the JSON Object/Scene format
     import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js';
     // 3MF
     import { 3MFLoader } from 'three/examples/jsm/loaders/3MFLoader.js';
+```
 
 The recommended file format for online viewing is GLTF , on the grounds that it’s ‘focused on runtime asset delivery, compact to transmit and fast to load’.
 
 Of course, there may be reasons to prefer a specific file (for example, if the quality is your priority, or if you need to accurately represent files for 3D printing). But if you can, you’ll likely get the best performance online by importing your files in the GLTF format.    
 
+```js
     import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
     import model from '../models/sample.gltf';
     let loader = new GLTFLoader();
@@ -222,6 +252,7 @@ Of course, there may be reasons to prefer a specific file (for example, if the q
     }, undefined, function (err) {
         console.error(err);
     });
+```
 
 # Bringing it all together
 One of the reasons that Three.js can seem intimidating is that, if you’re building something from scratch, a fair amount of code is required just to see something on your screen. In every example so far, we’ve needed to create a scene and a camera. To keep things simpler, I’ve kept this code out of the way at the bottom, but we’ll now look at bringing everything together.
@@ -230,6 +261,7 @@ The way you order and organise your code is up to you. In simpler examples, like
 
 For simplicity, we’ll look at the elements you’ll need to render a single object and we’ll do so in a single JavaScript file. Here’s an outline to get you started, which will render the :    
 
+```js
     // Import dependencies
     import * as THREE from 'three';
     import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
@@ -299,6 +331,7 @@ For simplicity, we’ll look at the elements you’ll need to render a single ob
 
     // Call the animate function
     animate();
+```
 
 # Should I use a framework?    
 
@@ -309,21 +342,26 @@ But, for beginners, I recommend starting with regular, vanilla Javascript. This 
 # How to add vanilla Three.js to a framework
 Three.js will give you an HTML object (often called renderer.domElement) which you can append to any HTML element in your app. So, for example, if you have a div with id="threejs" , you can simply include the following in your Three.js code:
 
+```js
     document.getElementById('threejs').appendChild(renderer.domElement);
+```
 
 Some frameworks have a preferred way for you to access DOM nodes — such as a ref in React, an $ref in Vue or a ngRef in Angular — which come with certain advantages over querying elements directly from the DOM. As an example, we’ll now look at a quick implementation strategy for React.
 
 # A strategy for React
 If you use React, here’s one way of incorporating a regular Three.js file into one of your components. In one file, ThreeEntryPoint.js, we’ll hold our vanilla Three.js code:
 
+```js
     export default function ThreeEntryPoint(sceneRef) {
         let renderer = new THREE.WebGLRenderer(); 
         // ...
         sceneRef.appendChild(renderer.domElement);
     }
+```
 
 We should export this as a function, which takes one argument: a React ref to an element in our React component. We can now make our component, ThreeContainer.js :
 
+```js
     import React, { Component } from 'react';
     import ThreeEntryPoint from './threejs/ThreeEntryPoint';
     export default class ThreeContainer extends Component {
@@ -338,6 +376,7 @@ We should export this as a function, which takes one argument: a React ref to an
         );
     }
     }
+```
 
 The imported ThreeEntryPoint function should go inside our componentDidMount method, and pass our new div as its argument, using refs.
 For an example of this approach in action, feel free to clone the following repository and try it for yourself: https://github.com/BretCameron/three-js-sample.    
