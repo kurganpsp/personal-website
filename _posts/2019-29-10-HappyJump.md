@@ -4,7 +4,7 @@ title: "Happy Jump From IQ"
 published: true
 ---
 
-**Hello world**, este es mi primer post en Jekyll.
+**Hello world**, este es mi primer post usando puot Jekyll.
 
 Espero que les guste!
 

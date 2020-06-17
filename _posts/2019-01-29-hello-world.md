@@ -3,7 +3,7 @@ title: "Welcome to Jekyll!"
 published: false
 ---
 
-**Hello world**, este es mi primer post en Jekyll.
+**Hello world**, este es mi primer post .
 
 Espero que les guste!
 
