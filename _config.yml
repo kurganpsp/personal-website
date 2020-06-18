@@ -45,7 +45,7 @@ social_media:
   # vk: your_username
     website: https://kurganpsp.github.io/personal-website/
   # youtube: kurganpsp
-    youtube: https://www.youtube.com/user/kurganpsp
+    youtube: kurganpsp
 
 topics:
   - name: CSS
