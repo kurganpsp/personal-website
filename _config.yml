@@ -59,5 +59,9 @@ topics:
     web_url: https://www.nvidia.com/es-la/
     image_url: https://www.softexia.com/wp-content/uploads/2015/12/Nvidia-Logo-256x256.png
   
-theme: jekyll-theme-modernist
+  - name: Vulkan
+    web_url: https://www.khronos.org/vulkan/
+    image_url: https://www.khronos.org/assets/uploads/apis/2020-Vulkan-small-badge.png
+
+    theme: jekyll-theme-modernist
 
