@@ -69,7 +69,7 @@ body {
 ## Yaml
 ```yaml
 ---
-one: Cristhian Pineda
+one: Cristhian Castro
 two: Sammy Sosa
 three: Ken Griffey
 ```
